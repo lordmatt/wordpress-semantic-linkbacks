@@ -4,7 +4,7 @@ Donate link: https://notiz.blog/donate/
 Tags: webmention, pingback, trackback, linkback, microformats, comments, indieweb
 Requires at least: 4.9
 Requires PHP: 5.6
-Tested up to: 5.7
+Tested up to: 5.8
 Stable tag: 3.10.4
 License: MIT
 License URI: http://opensource.org/licenses/MIT
