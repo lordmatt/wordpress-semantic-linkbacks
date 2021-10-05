@@ -91,6 +91,10 @@ class Semantic_Linkbacks_Plugin {
 	public static function facepile_checkboxes() {
 		$strings  = Linkbacks_Handler::get_comment_type_strings();
 		$facepile = get_option( 'semantic_linkbacks_facepiles' );
+		//	If getting the facepiles hasn't worked, create an empty array to avoid generating errors
+		if ( ! is_array( $facepile ) ) {
+			$facepile = array();
+		}
 		echo '<div id="facepile-all">';
 		foreach ( $strings as $key => $value ) {
 			printf( '<input name="semantic_linkbacks_facepiles[]" type="checkbox" value="%1$s" id="%1$s" %2$s /><label for="%1$s">%3$s</label><br />', $key, checked( in_array( $key, $facepile, true ), true, false ), $value );
