@@ -14,7 +14,7 @@ class Semantic_Linkbacks_Walker_Comment extends Walker_Comment {
 		if ( ! is_array( $facepiles ) ) {
 			$facepiles = array();
 		}
-		
+
 		if ( self::is_reaction( $comment ) && in_array( 'reaction', $facepiles, true ) ) {
 			return true;
 		}
@@ -106,7 +106,7 @@ class Semantic_Linkbacks_Walker_Comment extends Walker_Comment {
 							printf(
 								/* translators: %s: comment author link */
 								__( '%s <span class="says">says:</span>', 'semantic-linkbacks' ),
-								sprintf( '<b>%s</b>', self::get_comment_author_link( $comment ) )
+								sprintf( '<b class="fn">%s</b>', self::get_comment_author_link( $comment ) )
 							);
 						if ( $type && ! empty( $cite ) ) {
 							printf( $cite, $url, $host );
