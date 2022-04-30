@@ -1,6 +1,6 @@
 <?php
 class RenderingTest extends WP_UnitTestCase {
-	protected function set_up() {
+	public function set_up() {
 		parent::set_up();
 		update_option( 'semantic_linkbacks_facepiles_fold_limit', 2 );
 		add_filter(
