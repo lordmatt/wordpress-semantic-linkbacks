@@ -5,7 +5,7 @@
  * Description: Semantic Linkbacks for WebMentions, Trackbacks and Pingbacks
  * Author: Matthias Pfefferle
  * Author URI: https://notiz.blog/
- * Version: 3.11.1
+ * Version: 3.11.2
  * License: MIT
  * License URI: http://opensource.org/licenses/MIT
  * Text Domain: semantic-linkbacks
