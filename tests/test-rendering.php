@@ -1,7 +1,7 @@
 <?php
 class RenderingTest extends WP_UnitTestCase {
-	protected function setUp() {
-		parent::setUp();
+	protected function set_up() {
+		parent::set_up();
 		update_option( 'semantic_linkbacks_facepiles_fold_limit', 2 );
 		add_filter(
 			'comment_flood_filter',
