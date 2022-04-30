@@ -451,7 +451,9 @@ class Linkbacks_MF2_Handler {
 
 		foreach ( $mf_array['rel-urls'] as $url => $meta ) {
 			if (
+				isset( $meta['type'] ) &&
 				'application/mf2+json' === trim( $meta['type'] ) &&
+				isset( $meta['rels'] ) &&
 				in_array( 'alternate', $meta['rels'], true ) &&
 				filter_var( $url, FILTER_VALIDATE_URL ) !== false
 			) {
