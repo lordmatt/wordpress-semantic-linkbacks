@@ -14,3 +14,4 @@ wordpress
 .DS_Store
 package-lock.json
 composer.lock
+.vscode/settings.json

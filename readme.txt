@@ -89,6 +89,7 @@ Project actively developed on Github at [pfefferle/wordpress-semantic-linkbacks]
 = 3.11.2 =
 
 * Fix array access issue
+* Fix coding standards
 
 = 3.11.1 =
 
