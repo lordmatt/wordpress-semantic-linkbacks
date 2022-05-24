@@ -199,7 +199,9 @@ class Linkbacks_MF2_Handler {
 			$author = $properties['author'];
 		} else {
 			$author = self::get_representative_author( $mf_array, $source );
-			$author = self::flatten_microformats( $author );
+                        if($author!==null){
+                            $author = self::flatten_microformats( $author );
+                        }
 		}
 		// If this is an invite than the invite should be displayed instead of the author
 		if ( isset( $properties['invitee'] ) ) {
@@ -301,7 +303,7 @@ class Linkbacks_MF2_Handler {
 		}
 
 		// Check for person tagging
-		if ( isset( $properties['category'] ) ) {
+		if ( isset( $properties['category'] ) && is_array($properties['category']) ) {
 			if ( in_array( $commentdata['target'], $properties['category'], true ) ) {
 				$commentdata['category'] = array( $commentdata['target'] );
 			}
@@ -396,6 +398,9 @@ class Linkbacks_MF2_Handler {
 
 	public static function flatten_microformats( $item ) {
 		$flat = array();
+                if(!is_array($item)){
+                    return $item;
+                }
 		if ( 1 === count( $item ) ) {
 			$item = $item[0];
 		}
@@ -451,9 +456,7 @@ class Linkbacks_MF2_Handler {
 
 		foreach ( $mf_array['rel-urls'] as $url => $meta ) {
 			if (
-				isset( $meta['type'] ) &&
 				'application/mf2+json' === trim( $meta['type'] ) &&
-				isset( $meta['rels'] ) &&
 				in_array( 'alternate', $meta['rels'], true ) &&
 				filter_var( $url, FILTER_VALIDATE_URL ) !== false
 			) {
@@ -565,7 +568,7 @@ class Linkbacks_MF2_Handler {
 			return $mf_array['rels']['author'];
 		}
 
-		return null;
+		return 'someone';
 	}
 
 	/**
